@@ -21,7 +21,8 @@
 		"contact" : "Contact",
 		"updates" : "Site Updates",
 
-		"done" : "done"
+		"done" : "done",
+		"language_change": "Change language"
 	},
 	"fhh_js": {
 		"invalid_cause_of_death" : "Please Select Cause of Death",	

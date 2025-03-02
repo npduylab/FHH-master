@@ -21,7 +21,8 @@
 		"contact" : "Contact",
 		"updates" : "Site Updates",
 
-		"done" : "done"
+		"done" : "done",
+		"language_change": "Language Change"
 	},
 	"fhh_js": {
 		"ashkenazi" : "Why Ask About Ashkenazi?",
