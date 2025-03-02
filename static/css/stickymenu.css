@@ -1,0 +1,80 @@
+#nav{
+    height:40px;
+    border-bottom:1px solid #ddd;
+    position:fixed;
+    top:0px;
+    left:0px;
+    right:0px;
+    z-index: 99999;
+    background-color:#00477A;
+}
+#nav ul{
+    height:25px;
+    list-style:none;
+    margin:0px;
+    width:850px;
+}
+#nav ul li{
+    display:inline;
+    float:left;
+    margin:0px 0px;
+    background-color:#00477A;
+}
+#nav a{
+    border-left:1px solid #fff;
+    font-size:16px;
+    font-weight:bold;
+    float:left;
+    padding: 0px 10px;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+
+    height:40px;
+    line-height:38px;
+}
+#nav a.top span, #nav a.bottom span{
+    float:left;
+    width:160px;
+    height:16px;
+}
+#nav a.top span{
+    background:transparent url(../images/top.png) no-repeat center center;
+}
+#nav a.bottom span{
+    background:transparent url(../images/bottom.png) no-repeat center center;
+}
+
+#nav ul li.search{
+    float:right;
+}
+#nav input[type="text"]{
+    float:left;
+    border:1px solid #ccc;
+    margin:0px 1px 0px 50px;
+    padding:2px 2px 2px 2px;
+}
+input.searchbutton{
+    border:1px solid #ccc;
+    padding:1px;
+    cursor:pointer;
+    width:30px;
+    height:22px;
+    background:#E8E9EA url(../images/search.png) no-repeat center center;
+}
+input.searchbutton:hover{
+    background-color:#D9D9DA;
+}
+.selector select{
+    font-size:25px;
+    font-weight:bold;
+    background-color: #00477A;
+    color:white;
+}
+
+.selector option{
+    font-size:25px;
+    font-weight:bold;
+    background-color: #00477A;
+    color:white;
+}

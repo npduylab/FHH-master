@@ -1,0 +1,441 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <script
+        src="//assets.adobedtm.com/f1bfa9f7170c81b1a9a9ecdcc6c5215ee0b03c84/satelliteLib-4b219b82c4737db0e1797b6c511cf10c802c95cb.js"></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <noscript>
+        <meta http-equiv="refresh" content="0; URL=./unsupported_browser.html">
+        </meta> </noscript>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="cache-control" content="max-age=0">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="expires" content="0">
+    <meta http-equiv="pragma" content="no-cache">
+
+    <!--[if lt IE 7 ]-->
+    <!-- <html class="ie6"> <![endif]-->
+    <!--[if lt IE 7 ]-->
+    <!-- <html class="ie7"> <![endif]-->
+    <!--[if lt IE 8 ]-->
+    <!-- <html class="ie8"> <![endif]-->
+    <!--[if lt IE 9 ]-->
+    <!-- <html class="ie9"> <![endif]-->
+    <!--[if (gt IE 9)|!(IE)]><!-->
+    <!--<html class=""> -->
+    <!--<![endif]-->
+
+    <title>MFHP</title>
+
+    <script src="../js/angular.min.js"></script>
+    <script src="../js/fhhController.js"></script>
+    <script type="text/javascript" src="../plugins/bootstrap/ui-bootstrap-tpls-0.13.0.min.js"></script>
+    <script type="text/javascript" src="../jquery/jquery-1.11.1.js"></script>
+    <script type="text/javascript" src="../jquery/jquery-ui-1.10.4.js"></script>
+    <link rel="stylesheet" type="text/css" href="../jquery/jquery-ui-1.10.4.css">
+    <script type="text/javascript" src="../js/config.js"></script>
+    <script type="text/javascript" src="../js/go-debug.js"></script>
+    <script type="text/javascript" src="../js/genogram.js"></script>
+    <script type="text/javascript" src="../js/new_diagram.js"></script>
+    <script type="text/javascript" src="../js/fhh.js"></script>
+    <script type="text/javascript" src="../js/fhh_export_family_member.js"></script>
+    <script type="text/javascript" src="../js/load_xml.js"></script>
+    <script type="text/javascript" src="../js/save_xml.js"></script>
+
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BHSEFD2G9V"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-BHSEFD2G9V');
+    </script>
+
+
+
+
+    <!-- Themes go here -->
+    <link rel="stylesheet" type="text/css" href="../themes/deploy/fhh.css">
+    <link rel="shortcut icon" href="../themes/deploy/favicon.ico" type="image/x-icon">
+    <!-- Also includes images banner_left.png and banner_right.png -->
+
+    <!-- For language translation -->
+    <script type="text/javascript" src="../js/i18next-1.7.4.js"></script>
+
+    <!-- Pedigree SVG scripts -->
+
+    <script type="text/javascript" src="../js/family_pivot.js"></script>
+
+    <!--<script type="text/javascript" src="../js/family_pedigree_default.js"></script>-->
+
+    <script type="text/javascript" src="../js/bmi.js"></script>
+
+    <script type="text/javascript" src="../static/js/jquery.svg.js"></script>
+
+    <script type="text/javascript" src="../static/js/jquery.qtip.js"></script>
+    <script type="text/javascript" src="../static/js/jquery.dataTables.js"></script>
+    <script type="text/javascript" src="../static/js/dataTables.colReorder.js"></script>
+    <script type="text/javascript" src="../static/js/dataTables.tableTools.js"></script>
+    <script type="text/javascript" src="../static/js/dataTables.fixedColumns.js"></script>
+    <!--<script type="text/javascript" src="../static/js/panzoom.js"></script>-->
+    <script type="text/javascript" src="../static/js/raphael-min.js"></script>
+    <!--<script type="text/javascript" src="../static/js/SVGPan.js"></script>-->
+    <script type="text/javascript" src="../risk/heart/heart.js"></script>
+    <script type="text/javascript" src="../risk/brca/brca_pre.js"></script>
+    <script type="text/javascript" src="../risk/crca/crca.js"></script>
+    <script type="text/javascript" src="../risk/drc/diabetes_pre.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="../static/css/jquery.svg.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/jquery.qtip.min.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/pedigree.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/jquery.dataTables.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/dataTables.colReorder.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/dataTables.tableTools.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/dataTables.fixedColumns.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/stickymenu.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/bootstrap.min.css">
+
+    <script type="text/javascript" src="../js/keys.js"></script>
+
+    <script>
+
+        $( function() {
+
+          $( "#datepicker" ).datepicker();
+
+        } );
+
+        </script>
+
+
+</head>
+
+<body ng-app="myApp">
+    <!-- Dropbox Integration -->
+    <!-- Need to dynamically create the script tag as the data-app-key comes from the keys.js file -->
+    <script type="text/javascript">
+        if (typeof DROPBOX_APP_KEY != 'undefined') {
+            var s = document.createElement('script');
+            s.setAttribute('src', "../static/js/dropbox_dropins.js");
+            s.setAttribute('id', "dropboxjs");
+            s.setAttribute('data-app-key', DROPBOX_APP_KEY);
+            document.body.appendChild(s);
+        }
+    </script>
+
+      <!-- Google Drive Integration -->
+    <script type="text/javascript" src="https://apis.google.com/js/client.js"></script>
+
+
+    <div id="wrapper" class="main_container">
+
+        <!-- BEGIN HEADER -->
+        <div id="skipNavBegin" style="width: 0; height: 0; overflow: hidden;">
+            <a href="#skipNavEnd" accesskey="n">Skip navigation</a>
+        </div>
+
+        <div class="header_container">
+            <table class="banner">
+                <tr>
+                    <td class="banner_left"><a id="warnAndGoHome" href="index.html"><img
+                                src="../themes/deploy/banner_left.jpg"
+                                alt="My Family Health Portrait - A tool from the Surgeon General"
+                                class="fhhBannerTitle"></a></td>
+                    <td class="banner_right"><img height="60" width="326" src="../themes/deploy/banner_right.png"
+                            alt="Collection of family photos from diverse families." class="fhhBannerPhotos"></td>
+                </tr>
+            </table>
+        </div>
+        <!-- END HEADER -->
+
+        <div id="main" class="content_container">
+            <div id="content">
+
+                <form id="personForm" name="personForm" action="/fhh-web/familyHistory/start.action" method="post"
+                    class="form"></form>
+                <h1 class='translate' data-i18n='fhh_fhh.h1_my_fhh'>My Family Health History</h1>
+
+                <div class="homeMain">
+                    <div>
+                        <span class="homeCheck">
+                            <div>
+                                <p class='translate homeHead'data-i18n='fhh_fhh.homeHead'>Check your risk for certain common diseases in your family
+                                </p>
+                            </div>
+                            <div>
+                                <a id="navRiskCalculator" href="#"
+                                    class='translate button_link_check homeIndentText ' data-i18n='fhh_fhh.button_link_check'>Check Your Familial Risk</a>
+                            </div>
+                        </span>
+                        <span class="homeHelp">
+                            <div>
+                                <a id="nav_help" class='translate button_link homeHelpBtn' data-i18n='fhh_fhh.Get_Help_For_This_Page'>Get Help For This Page</a>
+                            </div>
+                        </span>
+                    </div>
+                    <div>
+                        <span class="homeManage">
+                            <div> <p class='translate homeHead' data-i18n='fhh_fhh.manage_your_data'>Manage your data</p></div>
+                            <div>
+                                <a id="save_personal_history_button" href="#"
+                                    class='translate button_link homeIndentText'><span class='translate' data-i18n='fhh_fhh.Save_Data'>Save data</span></a>
+                                <p class="translate homeText saveText" data-i18n="fhh_fhh.So_you_can_use_this_data" > - So you can use and update it later <span id="firstVari"
+                                        style="color:red;font-weight:bold;font-size:1.1em"></span></p>
+                            </div>
+                            <div>
+                                <a id="navCopyFamily" href="#" class='translate button_link homeIndentText'><span class='translate' data-i18n='fhh_fhh.Share_Data'>Share data</span></a>
+                                <p class="translate homeText"> <span class='translate' data-i18n='fhh_fhh.save_for_use_by'>Save for use by a family member</span></p>
+                            </div>
+                            <div>
+                                <a id="warnAndGoHome" href="index.html"
+                                    class='translate button_link homeIndentText' data-i18n='fhh_fhh.Start_Over'>Start Over</a>
+                                <p class="translate homeText deleteText"data-i18n='fhh_fhh.Delete_all_unsaved'> - Delete all unsaved data and restart
+                                    with new data, or load saved data</p>
+                            </div>
+                        </span>
+
+                    </div>
+                    <div class="homeView">
+
+                        <div>
+                            <p class='translate homeHead'data-i18n='fhh_fhh.View_and_print_data'>View and print data</p>
+                        </div>
+                        <div>
+                            <a id="navViewDiagram" href="#" ng-click="openDiagramTable(true)"
+                                class='translate button_link homeIndentText' ng-controller="fhhController"><span class='translate' data-i18n='fhh_fhh.Pedigree_Drawing'>Pedigree Drawing</span></a>
+                            <a id="navViewDiagram" href="#personal_info_table" ng-click="openDiagramTable(false)"
+                                class='translate button_link' ng-controller="fhhController"><span class='translate' data-i18n='fhh_fhh.Family_Health_Table'>Family Health Table</span></a>
+                            <p>
+                        </div>
+
+                    </div>
+                    <div class="homeAdd">
+                        <div>
+                            <p class='translate homeHead' data-i18n='fhh_fhh.Edit_your_family'>Edit your family and health histories</p>
+                        </div>
+                        <div>
+                            <a id="add_another_family_member_button" href="#"
+                                class='translate button_link homeIndentText'><span class='translate' data-i18n='fhh_fhh.Add_a_family_member'>Add a Family Member</span></a>
+                            <p class="translate homeText"> <span class='translate' data-i18n='fhh_fhh.Add_another_family_member'> Add another family member and enter their health
+                                information.</span></p>
+                        </div>
+                        <div>
+                            <p class="translate homeIndentText">Click <IMG src='../images/icon_edit.gif'
+                                    alt='Update History' height='16' /> <span class='translate' data-i18n='fhh_fhh.in_the_table_below_to_make_changes'>in the table below to make changes to a family member’s information and health history.</span> 
+                                </p>
+                        </div>
+                        <div>
+                            <p class="translate homeIndentText">Click <IMG src='../images/icon_trash.gif'
+                                    alt='Remove History' height='16' /> <span class='translate' data-i18n='fhh_fhh.in_the_table_2'>in the table below to remove a family member and their data.</span> </p>
+                        </div>
+                        <div>
+                            <p class="translate homeText"><span class='translate' data-i18n='fhh_fhh.Remember_to_click_the'>Remember to click the “Save Data” button above if you want
+                                to save your changes for future use.</span></p>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <table id="history_summary_table" class="summary_table" summary="This table lists the members of your family
+        and groups them based on how they are related to you and which side of the family they are on.
+        You may add, update or remove family members from the links within the table.">
+                <tr class=''>
+                    <th scope="col" class="nowrap translate" data-i18n='fhh_fhh.th_name'>Name</th>
+                    <th scope="col" abbr="Relationship" class="nowrap translate" data-i18n='fhh_fhh.th_relation'>
+                        Relationship to Me</th>
+                    <th scope="col" abbr="Update" class="nowrap translate" data-i18n='fhh_fhh.th_upd_hist'>Update
+                        History</th>
+                    <th scope="col" abbr="Remove" class="nowrap translate" data-i18n='fhh_fhh.th_rem_rel'>Remove
+                        Relative</th>
+                </tr>
+                <tr class="person_row">
+                    <td class='information'></td>
+                    <td class='information'>Self</td>
+                    <td class="action">&nbsp;</td>
+                    <td class="action">&nbsp;</td>
+                </tr>
+            </table>
+
+            <div class="buttonContainer"> </div>
+
+
+            </form><br />
+        </div>
+    </div>
+
+
+    </div>
+
+
+    <!--  All Dialog Boxes will load at the start of the page, but will be kept in seperate html files for easy understanding -->
+    <div id='new_diagram_dialog'> </div>
+    <div id='copy_for_family_member'> </div>
+    <div id='add_personal_information_dialog'> </div>
+    <div id='update_family_member_health_history_dialog'> </div>
+    <div id='add_all_family_members_dialog'> </div>
+    <div id='load_personal_history_dialog'> </div>
+    <div id='save_personal_history_dialog'> </div>
+    <div id='view_diagram_and_table_dialog'> </div>
+    <div id='family_pedigree'> </div>
+    <div id="update_help_dialog"></div>
+    <div id="personal_help_dialog"></div>
+    <div id="load_help_dialog"></div>
+    <div id="immediate_help_dialog"></div>
+
+    <div id='why_ask_ashkenazi_dialog'> </div>
+    <div id='debug' style='display:none;'></div>
+    <div id='disease_risk_calculator'>
+        <!-- div class='title-bar'>Your Health Risk Assessment</div -->
+        <!-- P class='instructions'>On this screen you can get your risk assessment by pressing the "Calculate Risk" button.</P -->
+        <div id='risk_section'> <i>Loading Risk Assessment Tools...</i> </div>
+        <div id='risk_detail_window'> <i>Loading Risk Assessment Tools...</i> </div>
+    </div>
+    <div id='help_dialog'>
+        <div id='help_main_page' class='help'>
+            <h2 class='translate' data-i18n='fhh_fhh.h2_update_fhh'>Update My Family History</h2>
+            <p class='translate instructions' data-i18n='fhh_fhh.p_update_my_history'>On this screen you can:</p>
+            <ul>
+
+                <li>
+                    <span class='translate instructions' data-i18n='fhh_fhh.p_update_my_history_b2_before'>Change your
+                        information or a family member's information by pressing</span><span
+                        class="translate instructions" data-i18n="fhh_fhh.th_upd_hist"
+                        style="font-weight:bold;"><B>Update History</B></span>
+                    <IMG src='../images/icon_edit.gif' alt='Update History' height='16' />
+                    <span class='translate instructions' data-i18n='fhh_fhh.p_update_my_history_b2_after'> next to the
+                        name in the list.</span>
+                </li>
+                <li>
+                    <span class='translate instructions' data-i18n='fhh_fhh.p_update_my_history_b3_before'>Remove a
+                        family member from your history by pressing</span><span class='translate instructions'
+                        data-i18n='fhh_fhh.th_remove_hist' style="font-weight:Bold;"><B>Remove</B></span>
+                    <IMG src='../images/icon_trash.gif' alt='Remove History' height='16' />
+                    <span class='translate instructions' data-i18n='fhh_fhh.p_update_my_history_b3_after'> next to the
+                        name in the list. (You cannot remove yourself, your parents, or grandparents.)</span>
+                </li>
+            </ul>
+            <p class='translate instructions' data-i18n='fhh_fhh.p_update_my_history2'>You can Also:</p>
+            <ul>
+                <li class='translate instructions' data-i18n='fhh_fhh.p_update_my_history2_b1'>Restart your family
+                    history by clicking on the 'Start Over' button </li>
+                <span class="computerOnly">
+                    <li class='translate instructions' data-i18n='fhh_fhh.p_update_my_history2_b2'>Save your history to
+                        a file on your computer or into the cloud by clicking on 'Save Data' button</li>
+                </span>
+                <li class='translate instructions' data-i18n='fhh_fhh.p_update_my_history2_b3'>Add another family member
+                    to your family history by clicking 'Add a family member' button</li>
+                <li class='translate instructions' data-i18n='fhh_fhh.p_update_my_history2_b4'>View a diagram of your
+                    family tree by clicking on 'Pedigree drawing' button. Alternatively, you can click the 'Family
+                    Health table' button to navigate to the table directly</li>
+                <span class="computerOnly">
+                    <li class='translate instructions' data-i18n='fhh_fhh.p_update_my_history2_b5'>Export your family
+                        information to give a close relative a headstart on his/her family tree by clicking on the
+                        'Share Data' button</li>
+                </span>
+                <li class='translate instructions' data-i18n='fhh_fhh.p_update_my_history2_b6'>Use one of the Disease
+                    Risk Calculators to determine if you are at increased risk of a disease based on your family history
+                    by clicking on the 'Check your risk' button</li>
+                <li class='translate instructions' data-i18n='fhh_fhh.p_update_my_history2_b7'>Get additional Help by
+                    clicking on the 'Get Help For This Page' button</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- BEGIN FOOTER -->
+
+
+    <table class="footerTable">
+        <tbody>
+            <tr>
+                <td class="footerTdLinks">
+
+                    <a href="#" onclick="glossary()" class='translate' data-i18n='fhh_index.glossary'>Glossary</a> |
+
+                    <a href="#" onclick="faq()" class='translate' data-i18n='fhh_index.faq'>FAQ</a> |
+
+                    <a href="#" onclick="about()" class='translate' data-i18n='fhh_index.about'>About This Site</a> |
+
+                    <a href="#" onclick="contact()" class='translate' data-i18n='fhh_index.contact'>Contact Us</a>
+
+
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="footerTable">
+        <tbody>
+            <tr>
+
+                <td class="footerTdLinks">
+                    Created By <a href="https://www.genome.gov/" target="_blank">NIH NHGRI</a></a>
+                </td>
+                <td class="footerTdLinks"> &nbsp;&nbsp;
+                    Managed By <a href="https://www.cdc.gov/genomics" target="_blank">CDC OGPPH</a>
+                </td>
+                <td class="footerTdLinks"> &nbsp;&nbsp;
+                    Updated By <a href="https://cancer.gov" target="_blank">NCI </a> hosted at <a href="https://cbiit.github.io/FHH/html/index.html" target="_blank">GitHub Pages</a>
+                </td>
+
+            </tr>
+        </tbody>
+    </table><br>
+    <p>
+        <div id="wrapper" class="main_container">
+            <div style="text-align:left;font-family:grey;font-size:100%">Disclaimer: <em>The Surgeon General's My Family
+                    Health Portrait tool does NOT allow the government or other entities to access your information. The
+                    tool provides the software for organizing your information, but your information is not transmitted
+                    back to government or other servers and can only be downloaded by you. Your information is never
+                    available to anyone else, unless you choose to share it. The Surgeon General's tool does not provide
+                    medical advice. For questions related to family health history and your health, talk to your doctor.
+                </em></div>
+        </div>
+        <!-- END FOOTER -->
+
+        <script type="text/javascript">_satellite.pageBottom();</script>
+</body>
+
+<script type='text/javascript'>
+    // Static links need to know what language
+
+    function get_help() {
+        window.open("./static/help_" + i18n.lng().substr(0, 2) + ".html", "", "width=800, height=600, scrollbars=yes");
+    }
+
+    function learn_more() {
+        window.open("./static/learn_more_" + i18n.lng().substr(0, 2) + ".html", "", "width=800, height=600, scrollbars=yes");
+    }
+
+    function glossary() {
+        window.open("./static/glossary_" + i18n.lng().substr(0, 2) + ".html", "", "width=800, height=600, scrollbars=yes");
+    }
+    function faq() {
+        window.open("./static/faq_" + i18n.lng().substr(0, 2) + ".html", "", "width=800, height=600, scrollbars=yes");
+    }
+    function about() {
+        window.open("./static/about_" + i18n.lng().substr(0, 2) + ".html", "", "width=800, height=600, scrollbars=yes");
+    }
+    function contact() {
+        window.open("./static/contact_" + i18n.lng().substr(0, 2) + ".html", "", "width=800, height=600, scrollbars=yes");
+    }
+    function site_updates() {
+        window.open("./static/site_update_" + i18n.lng().substr(0, 2) + ".html", "", "width=800, height=600, scrollbars=yes");
+    }
+</script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-B55F9P4M20"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-B55F9P4M20');
+</script>
+
+</html>

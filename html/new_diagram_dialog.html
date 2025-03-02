@@ -1,0 +1,45 @@
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<div id="nav" class="sticky">
+	<ul>
+		<li><a class="translate" data-i18n="fhh_family_pedigree.diagram_options" href="#optionsPanelMan" onclick="createDiagramDialog()">Diagram &amp; Table Options</a></li>
+		<li><input class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only ui-dialog-titlebar-close" role="button" aria-disabled="false" title="close" value="close" onclick="closeDialog()" style="right:50px;width:50px" type="button"></li>
+	</ul>
+</div>
+
+<table class="infolayer">
+	<tr><td>
+<h1 class="translate" data-i18n="fhh_fhh.a_view_diag_n_table">View Diagram & Table</h1><br/>
+		<p style="margin-bottom: 1px" class="translate" data-i18n="fhh_family_pedigree.desc_line1"></p>
+		<br style="line-height: 0px"/>
+		<p style="margin-bottom: 1px" class="translate" data-i18n="fhh_family_pedigree.desc_line2"></p><br />
+     </td></tr>
+</table>
+
+<button class="translate" style="font-size:120% !important;" data-i18n="fhh_family_pedigree.zoom_in" onclick="zoom(.2)">Zoom In</button>
+<button class="translate" style="font-size:120% !important;" data-i18n="fhh_family_pedigree.zoom_out" onclick="zoom(-.2)">Zoom Out</button>
+<button class="translate" style="font-size:120% !important;" data-i18n="fhh_family_pedigree.print" onclick="createImage()">Print</button>
+
+<div id="myDiagramDiv" style="width:auto; height:600px; background-color: #fff;">ABCDEF</div>
+
+<!-- 
+<script>angular.element(document).ready(function() {
+    });
+  </script>
+  <div ng-app="myApp">
+  <div ng-controller="tableController">
+  	<div id="thistest">test</div>
+  	<script>console.log("loaded");</script>
+  	<input type="text" ng-model="temp">
+    </div>
+  </div>
+</div>
+ -->
+<<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-B55F9P4M20"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-B55F9P4M20');
+</script>

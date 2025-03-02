@@ -1,0 +1,154 @@
+<script>
+
+  $( function() {
+
+    $( "#datepicker" ).datepicker({
+
+      changeMonth: true,
+
+      changeYear: true,
+
+      yearRange: "c-100:c0",
+      showOn: "button",
+
+      buttonImage: "../images/calendar.gif",
+
+      buttonImageOnly: true,
+
+      buttonText: "Select date"
+
+
+
+    });
+
+  } );
+
+  </script>
+
+
+
+
+
+
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">      <div style="text-align:right;font-size:110%">
+        <button id="add-help" class="translate" data-i18n="fhh_js.help">Help</button>
+      </div><br />
+
+      
+        <p>
+
+    <div class="title-bar translate" data-i18n='info_dialog.div_personal_info' id="personalInfo"> Your Personal Information </div>
+<table>
+     <tbody><tr>
+      <td valign="top" class="colOneSimple instructions"> 
+         <br /><span class='translate' data-i18n='info_dialog.instructions'></span>
+        </td>
+  </tr></tbody>
+ </table>
+
+    <p class='instructions'><span class="required">*</span>
+    	<span class='translate' data-i18n='info_dialog.required'>
+    </p>
+    
+    <table class="form" summary="Enter personal information.">
+    	<tr>
+    		<th class="label">
+    			<label for="personal_info_form_name" class="label">
+    				<span class="required">*</span><span class='translate' data-i18n='info_dialog.name'></span>
+    			</label>
+    		</th>
+    		<td><input name="person.name" size="30" maxlength="255" value="" tabindex="1" id="personal_info_form_name" type="text"></td>
+			</tr>
+      <tr>
+        <th class="label">
+        		<span class="required">*</span><span class='translate' data-i18n='info_dialog.gender'> </span>
+        </th>
+          <td>
+              &nbsp  &nbsp <input name="person.gender" id="personal_info_form_gender_male" value="MALE" tabindex="2" type="radio">
+        		<label for="personal_info_form_gender_male" class='translate' data-i18n='info_dialog.male'>Male</label>
+						<input name="person.gender" id="personal_info_form_gender_female" value="FEMALE" tabindex="2" type="radio">
+            <label for="personal_info_form_gender_female" class='translate' data-i18n='info_dialog.female'>Female</label>
+            					</td>
+      </tr>
+      <tr>
+        <th class="label">
+          	<label for="personal_info_form_nampersonal_info_form_date_of_birth" class="label"></label>
+          <span class="required">*</span><span class='translate' data-i18n='info_dialog.dob'></span>
+        </label>
+        	</th>
+            <td><input name="person.date_of_birth" size="20" maxlength="255" value="" tabindex="10"  class = "personal_info_form_date_of_birth" id="datepicker" type="text" readonly> 
+            	<span class='instructions'>click the icon to select.</span>
+            </td>
+        </tr>
+        <tr>
+            <th class='translate label' data-i18n='info_dialog.twin_status'> Were you born a twin?</th>
+            <td><input name="person.twin_status" id="personal_info_form_twin_status_no" checked="checked" value="NO" tabindex="11" type="radio">
+            		<label for="personal_info_form_twin_status_no" class="translate" data-i18n='info_dialog.no'>No</label>
+								<input name="person.twin_status" id="personal_info_form_twin_status_identical" value="IDENTICAL" tabindex="11" type="radio">
+								<label for="personal_info_form_twin_status_identical"  class="translate" data-i18n='info_dialog.identical'>Yes - Identical (Same)</label>
+								<input name="person.twin_status" id="personal_info_form_twin_status_fraternal" value="FRATERNAL" tabindex="11" type="radio">
+								<label for="personal_info_form_twin_status_fraternal" class="translate" data-i18n='info_dialog.fraternal'>Yes - Not Identical (Fraternal)</label>
+						</td>
+        </tr>
+        <tr>
+            <th class="translate label" data-i18n="info_dialog.adopted">
+               Were you adopted?
+            </th>
+            <td>
+            	<input id="personal_info_form_adopted_yes" name="person.adopted" type='checkbox' checked='false'>
+              <label class='translate' for="personal_info_form_adopted_yes" data-i18n='info_dialog.yes'>Yes</label>
+            </td>
+        </tr>
+        <tr>
+            <th class="label translate" data-i18n='info_dialog.height' >Height:</th>
+            <td><input class='numeric' name="personal_height_feet" size="1" maxlength="1" value="" tabindex="13" id="personal_height_feet" type="text"> 
+          		<label class='translate' for="personal_height_feet" data-i18n='info_dialog.feet'>Feet</label> &nbsp;&nbsp;
+          		<input class='numeric' name="personal_height_inches" size="5" maxlength="2" value="" tabindex="13" id="personal_height_inches" type="text"> 
+          		<label class='translate' for="personal_height_inches" data-i18n='info_dialog.inches'>Inches</label> 
+          		<span class='or translate' data-i18n='info_dialog.or'>-OR-</span> 
+          		<input class='numeric' name="personal_height_centimeters" size="3" maxlength='3' value="" tabindex="14" id="personal_height_centimeters" type="text"> 
+          		<label class='translate' for="personal_height_centimeters" data-i18n='info_dialog.centimeters'>Centimeters</label>
+            </td>
+				</tr>
+				<tr>
+          <th class="label"><label for="personal_weight"><span class="translate" data-i18n='info_dialog.weight'>Weight:</span></label></th>
+          <td><input name="personal_weight" size="5" maxlength="4" value="" tabindex="15" id="personal_weight" type="text"> 
+          	<label for="personal_weight_unit">&nbsp;</label>
+          	<select name="personal_weight_unit" tabindex="15" id="personal_weight_unit">
+		    			<option value="pound" class="translate" data-i18n='info_dialog.lbs' selected>lbs</option>
+		    			<option value="kilogram" class="translate" data-i18n='info_dialog.kgs'>kgs</option>
+						</select>
+					</td>
+        </tr>
+    </table>
+    <div id='personal_health_information' > <span> </span> health info </div>
+    <div id='personal_race_ethnicity' > family background info </div>
+<br/>
+ <table width="100%" cellspacing="0" cellpadding="0" border="0">
+  <tr>
+
+  <td style="text-align:right;">
+    <button id='addPersonInformationCancelButton' class="translate" data-i18n='info_dialog.btn2_fam_hist'>Cancel</button>    
+   	<button id='addPersonInformationSubmitButton' class="translate" data-i18n='info_dialog.btn1_fam_hist' style="text-align:right;font-size:110% !important">Next </button>
+  </td>
+
+</tr>
+</table>
+	
+	
+<script type='text/javascript' >
+	
+function health_vault() {
+	window.open("./static/health_vault_en.html", "", "width=800, height=600, scrollbars=yes");
+}
+</script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-B55F9P4M20"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-B55F9P4M20');
+</script>
